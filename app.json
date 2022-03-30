@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/menu/menu",
+    "pages/myInfo/myInfo",  
+    "pages/about/about",
+    "pages/question/question",
+    "pages/test1/test1",
+    "pages/order/index",
+    "pages/sortKnowledgeInfo/sortKnowledgeInfo"
+  ],
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#39b54a",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+        {
+            "pagePath": "pages/menu/menu",
+            "iconPath": "imgs/nav/icon-index-b.png",
+            "selectedIconPath": "imgs/nav/icon-index-r.png",
+            "text": "首页"
+        },
+        {
+            "pagePath": "pages/order/index",
+            "iconPath": "imgs/nav/icon-cate-off.png",
+            "selectedIconPath": "imgs/nav/icon-cate-on.png",
+            "text": "登记预约"
+        },
+        {
+            "pagePath": "pages/myInfo/myInfo",
+            "iconPath": "imgs/nav/icon-center-b.png",
+            "selectedIconPath": "imgs/nav/icon-center-r.png",
+            "text": "我的"
+        }
+    ]
+  },
+  "networkTimeout": {
+      "request": 5000
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

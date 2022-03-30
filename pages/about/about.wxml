@@ -1,0 +1,11 @@
+<view class="top">
+</view>
+    <view class="environmental">
+        <view class="title">关于曹县回收小程序</view>
+        <view style="margin-right: 20rpx;margin-left: 20rpx;">
+          <text class="body" >Hi!  您好~欢迎使用曹县回收小程序</text>
+          <text class="body" >环境保护工作的一项重要内容是资源的回收和再利用,什么是变废为宝的环保理念？</text>
+          <text class="body" >资源回收与再利用是环境保护工作的重要理念，在客观上我们是要践行这种理念，因为资源回收再生利用是有利于国家和整个全人类的一项重要的工作</text>
+          <text class="body" >垃圾分类，能够减少污染，变废为宝，推动生态文明建设，垃圾分类让“绿色、低碳、环保”的理念深入人心。群众要自觉践行垃圾分类，从而形成“垃圾分类，人人有责，保护环境，从我做起”的浓厚氛围。</text>
+        </view>
+    </view>

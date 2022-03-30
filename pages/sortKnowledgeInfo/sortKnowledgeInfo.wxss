@@ -1,0 +1,12 @@
+
+.setting{
+  display: flex;
+  flex-direction: row;
+  height: 230rpx;
+  width: auto;
+  align-items: center;
+  justify-content: center; 
+  font-size: 30rpx;
+  /* background-color: blue; */
+  /* max-height: 33rpx; */
+}

@@ -1,0 +1,219 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-25
+ *   描述:  我的
+ * 
+ * */-->
+<view class="page">
+  <!-- 个人资料 start-->
+  <view class="Cardrecovery" >
+    <view class="userinfo">
+        <view class='head-wrap' wx:if="{{!hasUserInfo}}">
+            <view class="no-login-avatar" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">
+                <view class='no-avatar' >
+                    <image class='avatar' src="/imgs/user.png"></image>
+                </view>
+                <!-- <button wx:else bindtap="getUserProfile" > -->
+                <view class='btn-login' style="color:#fff">点我登录</view>
+                <!-- </button> -->
+            </view>
+        </view>
+        <view class='head-wrap' wx:else>
+            <view class="head-l">
+                <view class='l'>
+                    <image class='avatar' src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class='r'>
+                    <view class='t'>
+                        <view class='name' style="color:#fff;">{{userInfo.nickName}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="head-r">
+                <view class="arrow"></view>
+            </view>
+        </view>
+        
+    </view>
+  </view>
+  <!-- 个人资料 end-->
+  <!-- 我的预约 -->
+ 
+  <view class="order-container">
+        <view class='header' data-index='0' bindtap='toOrderListTap'>
+            <view class='top-title'>
+                <view class='left-line'></view>
+                <view class='text'>常见问题</view>
+            </view>
+            <view class='see-more' bindtap="toAllQuestion">
+                <view class="text">查看全部问题</view>
+                <view class="arrow"></view>
+            </view>
+        </view>
+        <view class='btn-container'>
+            <view class='icon-wrap' data-index='1' bindtap='toFAQ'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/imgs/FAQ.png'>
+                    </image>
+                    <view wx:if="{{status.toPay > 0 }}" class='red-point'>{{status.toPay}}</view>
+                </view>
+                <text class='order-txt' style="color:#000000">FAQ</text>
+            </view>
+            <view class='icon-wrap' data-index='2' bindtap='toPrice'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/imgs/gujia.png'>
+                    </image>
+                    <view wx:if="{{status.toDelivery > 0 }}" class='red-point'>{{status.toDelivery}}</view>
+                </view>
+                <text class='order-txt' style="color:#000000">关于估价</text>
+            </view>
+            <view class='icon-wrap' data-index='3' bindtap='toGet'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/imgs/get.png'>
+                    </image>
+                    <view wx:if="{{status.toReceive > 0 }}" class='red-point'>{{status.toReceive}}</view>
+                </view>
+                <text class='order-txt' style="color:#000000">关于收取</text>
+            </view>
+            <view class='icon-wrap' data-index='0' bindtap='toMoney'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/imgs/jiaoyi.png'>
+                    </image>
+                </view>
+                <text class='order-txt' style="color:#000000">关于交易</text>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 这里之后是功能模板 -->
+    <view class="main">
+    <view class="li-wrap">
+        
+        <button class="contact-btn" bindtap="showModalshare">
+            <view class="list-l">
+                <view class="icon" style="margin-left: 20rpx;">
+                    <image class="img" src="/imgs/tuiguang.png"></image>
+                </view>
+                <view class="text">分享软件</view>
+            </view>
+            <view class="arrow"></view>
+        </button>
+         <button class="contact-btn" open-type='feedback'>
+            <view class="list-l">
+                <view class="icon" style="margin-left: 20rpx;">
+                    <image class="img" src="../../imgs/yijian.png"></image>
+                </view>
+                <view class="text">意见反馈</view>
+            </view>
+            <view class="arrow"></view>
+        </button>
+       
+        <view class="list" bindtap="toAbout">
+            <view class="list-l">
+                <view class="icon">
+                    <image class="img" src="/imgs/us.png"></image>
+                </view>
+                <view class="text">关于我们</view>
+            </view>
+            <view class="arrow"></view>
+        </view>
+    </view>
+    </view>
+    <!-- 这里之前是功能模板 -->
+  
+<!-- 我的预约 -->
+ 
+ 
+ <view class="recovery" style="position:fixed; bottom:0;">
+    <view class="layout_horizontal">
+    <view class="box1" style="border-right:1rpx solid #DCDCDC;">
+        <button class="kefu" open-type='contact' style="border-color: #fff; background-color:white; ">
+        <view class='setting' style=" max-height: 33rpx; ">
+        <image class='btnImg' src='../../imgs/kefu.png' style="width:30rpx;height:30rpx;"></image>
+        
+        <text style="font-size:30rpx;color:#000000;margin-left:5rpx">在线客服</text>
+        </view>
+        <view class="boxfont" style="max-height: 26rpx;">09:00-21:00</view>
+        <view class="boxfont">点击进行在线沟通</view>
+        </button>
+    
+    </view>
+    
+    <view class="box1" bindtap="showModal">
+        <button class="kefu" style="border-color: #fff; background-color:white; ">
+        <view class='setting' style=" max-height: 33rpx; ">
+        <image class='btnImg' src='../../imgs/phone.png' style="width:30rpx;height:30rpx;"></image>
+        <text style="font-size:30rpx;color:#000000;margin-left:5rpx">客服电话</text>
+        </view>
+        <view class="boxfont" style="max-height: 26rpx;">09:00-21:00</view>
+        <view class="boxfont">点击致电客服电话</view>
+        </button>
+    </view>
+    
+    <!-- 弹出框 -->
+    <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+        <view class="modal-cancel" bindtap="hideModal"></view>
+        <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+        <!--  -->
+        <view class='Mselect'>
+            <view catchtap='freeTell'>
+            拨打客服电话086
+            </view>
+        </view>
+        <view></view>
+        <view class='Mcancel' bindtap='mCancel'>
+            <text>取消</text>
+        </view>
+    
+        </view>
+    </view>
+    <!-- ?danchu -->
+ 
+    </view>
+
+</view>
+  <!-- 分享 -->
+<!--屏幕背景变暗的背景 -->
+    <view class="commodity_screen" bindtap="hideModalshare" wx:if="{{showModalStatus}}"></view>
+    <!--弹出框 -->
+    <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+         <view class="recovery" style="position:fixed; bottom:0;border-top: 0rpx solid #DCDCDC;">
+    <!-- 弹出框内容      -->
+    <view class="layout_horizontal">
+    <view class="box1" style="margin-top:0rpx;border-right:1rpx solid #DCDCDC;">
+        <button class="kefu" type="default" open-type="share" style="height:130rpx;border-color: #fff; background-color:white;">
+        <view class='setting'>
+        <image class='btnImg' src='../../imgs/weixin.png' style="width:80rpx;height:80rpx;"></image>
+        </view>
+        <view class="boxfont" style="max-height: 26rpx;color:#000000">微信好友</view>
+        <!-- <view class="boxfont">点击进行在线沟通</view> -->
+        </button>
+    
+    </view>
+    
+    <view class="box1" style="margin-top:0rpx">
+        <button class="kefu" open-type="share" style="height:130rpx;border-color: #fff; background-color:white; ">
+        <view class='setting'>
+        <image class='btnImg' src='../../imgs/pyq.png' style="width:80rpx;height:80rpx;"></image>
+        <!-- <text style="font-size:30rpx;color:#000000;margin-left:5rpx">客服电话</text> -->
+        </view>
+        <view class="boxfont" style="max-height: 26rpx;color:#000000">朋友圈</view>
+        <!-- <view class="boxfont">点击致电客服电话</view> -->
+        </button>
+    </view>
+    </view>
+    <!-- 弹出框内容      -->
+    </view>
+    </view>
+   <!-- 分享 -->
+  <!-- 我的贡献 start-->
+  <!-- 我的贡献 end-->
+<!-- 客户服务类型 -->
+  
+  <!-- 新的伙伴 start-->
+ 
+  <!-- 新的伙伴 end-->
+</view>
+
+<!--二维码 end-->

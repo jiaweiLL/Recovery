@@ -1,0 +1,17 @@
+<view class="page__hd"  style="background-color:{{datas[index].background}}">
+    <view class='setting'>
+        <view style="width:200rpx;height:200rpx;margin-right:15rpx ;">
+        <image class='btnImg' style="width:200rpx;height:200rpx;" src="/imgs/lajiclass/{{datas[index].id}}.png" ></image>
+        </view>
+        <text style="font-size:30rpx;color:#FFFFFF;">{{datas[index].introduction}}</text>
+    </view>
+  <!-- <view class="page__title">{{datas[index].name}}</view> -->
+  <!-- <view class="page__desc">{{datas[index].introduction}}</view> --> 
+</view>
+
+<view class="weui-cells__title">具体列表：</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell" wx:for="{{datas[index].dataList}}" wx:key="">
+    <view class="weui-cell__bd">{{item}}</view>
+  </view>
+</view>

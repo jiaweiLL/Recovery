@@ -1,0 +1,50 @@
+
+<!-- 菜单轮播图 -->
+
+  <swiper indicator-dots='true' autoplay="true" interval="3000">
+    <swiper-item wx:key="{{greenImg}}" wx:for="{{greenImg}}" wx:for-item="item">
+      <image src="{{item.img}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 客户服务类型 -->
+  <view class="recoveryclass">
+    <view class="recoveryKind">客户服务类型</view>
+    <view class='callableKind'>
+      <view class='callable' wx:for="{{callable}}" wx:key="{{callable}}" wx:for-item="item">
+          <image src='{{item.img}}' class='callableKindImage'></image>
+          <view class="callabledescript">{{item.descript}}</view>
+      </view>
+    </view>
+  </view>
+    <!-- 回收品类价格 -->
+ <view class="recovery">
+    <view class="recoveryKind">部分回收品类</view>
+    <view class='callableKind'>
+      <view class='callclass' wx:for="{{callclass}}" wx:key="{{callclass}}" wx:for-item="item">
+          <image src='{{item.img}}' class='callclassKindImage'></image>
+          <view class="callclassdescript">{{item.descript}}</view>
+          <view class="callclassdetail">{{item.detail}}</view>
+          <view class="callclassprice">{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 环保知识宣传 -->
+
+  <view class="recoveryclass">
+    <view class="recoveryKind">学习垃圾分类</view>
+    <view class='callableKind'>
+      <view class='lajiclass' wx:for="{{datas}}" wx:key="{{id}}" wx:for-item="item">
+          <navigator url="/pages/sortKnowledgeInfo/sortKnowledgeInfo?index={{index}}">
+          <image src="/imgs/lajiclass/{{item.id}}.png" class='lajiKindImage'></image>
+          </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="environmental">
+    <!-- <view class="environmentalProtection">环保知识宣传</view> -->
+    <!-- <view>垃圾不落地，随手带回家，呼叫绿客侠。</view> -->
+    <image style="width:100%" src='/imgs/lunbo/XC4.png'></image>
+  </view>
+
+

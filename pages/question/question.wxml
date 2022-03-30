@@ -1,0 +1,203 @@
+<view class="movie-container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="movie-content-wrapper">
+    <!-- FAQ -->
+    <view wx:if="{{navbarActiveIndex==0}}" class='weui-panel__bd'>
+      <view class="li-wrap">
+        <view class="list" bindtap="toAbout" bindtap="tigger" data-num="1">
+            <view class="list-l">
+                <view  class="text">一、人工客服能帮忙估价吗？</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==1?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您好，回收价格受重量、物品状态等因素影响。目前客服并不能准确获知您的回收情况，可以大概预估回收商品的价格。
+            </view>
+        <view class="list" bindtap="toAbout"  bindtap="tigger" data-num="2">
+            <view class="list-l">
+                <view class="text">二、进行回收前我要做些什么?</view>             
+            </view>
+            <view class="arrow"></view>
+        </view>  
+          <view class="classname {{uhide==2?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您好，你可以将回收的物品进行打包、分类。以便我们更好的预估价格，和快速进行交易，来减少您的宝贵时间。
+          </view>
+          <view class="list" bindtap="toAbout" bindtap="tigger" data-num="3">
+            <view class="list-l">
+                <view  class="text"> 三、预估价是成交价吗？</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==3?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您好，预估价格是根据你描述的商品情况，客服进行评估。商品的最终成交价格，由回收商品的工作人员与您协商。
+            </view>
+             <view class="list" bindtap="toAbout" bindtap="tigger" data-num="4">
+            <view class="list-l">
+                <view  class="text"> 四、来回运送回收车费由谁承担</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==4?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  本平台为您提供免费的上门回收废品的服务，不用支付任何运输费用。
+            </view>
+             <view class="list" bindtap="toAbout" bindtap="tigger" data-num="5">
+            <view class="list-l">
+                <view  class="text"> 五、可以取消预约吗？</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==5?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您可以在预约之后，通过与客服进行沟通，免费进行取消，不影响您以后的任何使用。
+            </view>
+             <view class="list" bindtap="toAbout"  bindtap="tigger" data-num="6">
+            <view class="list-l">
+                <view class="text">六、上门进行废品回收的时间有多久</view>             
+            </view>
+            <view class="arrow"></view>
+        </view>  
+          <view class="classname {{uhide==6?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  在本产品运营的区域内，在您提交预约的当天，由工作人员上门回收，如因特殊情况不能到达，会由客服人员提前通知您！
+          </view>
+      </view>
+    </view>
+     <!-- FAQ -->
+     <!-- 关于估价 -->
+    <view wx:if="{{navbarActiveIndex==1}}" class='weui-panel__bd'>
+      <view class="li-wrap">
+        <view class="list" bindtap="toAbout" bindtap="tigger" data-num="1">
+            <view class="list-l">
+                <view  class="text"> 一、预估价是成交价吗？</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==1?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您好，预估价格是根据你描述的商品情况，客服进行评估。商品的最终成交价格，由回收商品的工作人员与您协商。
+            </view>
+        <view class="list" bindtap="toAbout"  bindtap="tigger" data-num="2">
+            <view class="list-l">
+                <view class="text">二、进行回收前我要做些什么?</view>             
+            </view>
+            <view class="arrow"></view>
+        </view>  
+          <view class="classname {{uhide==2?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您好，你可以将回收的物品进行打包、分类。以便我们更好的预估价格，和快速进行交易，来减少您的宝贵时间。
+          </view>
+      </view>
+    </view>
+    <!-- 关于估价 -->
+    <!-- 关于运送 -->
+    <view wx:if="{{navbarActiveIndex==2}}" class='weui-panel__bd'>
+      <view class="li-wrap">
+        <view class="list" bindtap="toAbout" bindtap="tigger" data-num="1">
+            <view class="list-l">
+                <view  class="text"> 一、来回运送回收车费由谁承担</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==1?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  本平台为您提供免费的上门回收废品的服务，不用支付任何运输费用。
+            </view>
+        <view class="list" bindtap="toAbout"  bindtap="tigger" data-num="2">
+            <view class="list-l">
+                <view class="text">二、上门进行废品回收的时间有多久</view>             
+            </view>
+            <view class="arrow"></view>
+        </view>  
+          <view class="classname {{uhide==2?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  在本产品运营的区域内，在您提交预约的当天，由工作人员上门回收，如因特殊情况不能到达，会由客服人员提前通知您！
+          </view>
+      </view>
+    </view>
+    <!-- 关于运送 -->
+    <!-- 关于交易 -->
+    <view wx:if="{{navbarActiveIndex==3}}" class='weui-panel__bd'>
+      <view class="li-wrap">
+        <view class="list" bindtap="toAbout" bindtap="tigger" data-num="1">
+            <view class="list-l">
+                <view  class="text"> 一、可以取消预约吗？</view>               
+            </view>
+            <view class="arrow"></view>
+            
+        </view>
+            <view class="classname {{uhide==1?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  您可以在预约之后，通过与客服进行沟通，免费进行取消，不影响您以后的任何使用。
+            </view>
+        <view class="list" bindtap="toAbout"  bindtap="tigger" data-num="2">
+            <view class="list-l">
+                <view class="text">二、如何保障自己的隐私安全？</view>             
+            </view>
+            <view class="arrow"></view>
+        </view>  
+          <view class="classname {{uhide==2?'':'hidden'}}" style="top:10rpx;color:#000000;font-size:30rpx;text-align: left;">
+                  交易过程中，本平台会对你的预约的信息进行保密，确保您的隐私不会外泄。
+          </view>
+      </view>
+    </view>
+    <!-- 关于交易 -->
+  </view> 
+
+  <!-- 客服 -->
+   <view class="recovery" style="position:fixed; bottom:0;">
+<view class="layout_horizontal">
+  <view class="box1" style="border-right:1rpx solid #DCDCDC;">
+  <!-- <button open-type='contact' style=" background: salmon; opacity: 0;">在线客服</button> -->
+    <button class="kefu" open-type='contact' style="border-color: #fff; background-color:white; ">
+    <view class='setting'>
+      <image class='btnImg' src='../../imgs/kefu.png' style="width:30rpx;height:30rpx;"></image>
+      
+      <text style="font-size:30rpx;color:#000000;margin-left:5rpx">在线客服</text>
+    </view>
+    <view class="boxfont" style="max-height: 26rpx;">09:00-21:00</view>
+    <view class="boxfont">点击进行在线沟通</view>
+    </button>
+   
+  </view>
+   
+  <view class="box1" bindtap="showModal">
+  <button class="kefu" style="border-color: #fff; background-color:white; ">
+    <view class='setting'>
+      <image class='btnImg' src='../../imgs/phone.png' style="width:30rpx;height:30rpx;"></image>
+      <text style="font-size:30rpx;color:#000000;margin-left:5rpx">客服电话</text>
+    </view>
+   <view class="boxfont" style="max-height: 26rpx;">09:00-21:00</view>
+   <view class="boxfont">点击致电客服电话</view>
+  </button>
+  </view>
+  
+  <!-- 弹出框 -->
+ <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+    <view class="modal-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+      <!--  -->
+      <view class='Mselect'>
+        <view catchtap='freeTell'>
+          拨打客服电话086
+        </view>
+      </view>
+      <view></view>
+      <view class='Mcancel' bindtap='mCancel'>
+        <text>取消</text>
+      </view>
+ 
+    </view>
+  </view>
+  <!-- ?danchu -->
+  </view>
+</view>
+
+<!-- 客服 -->
+</view>

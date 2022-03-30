@@ -1,0 +1,132 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-21
+ *   描述:  首页wxss
+ * 
+ * */-->
+<view class="page">
+  <!-- 表单 start-->
+  <view class='huishou_bg'>
+    <form bindsubmit="submitForm">
+    <view class='huishou_form'>
+      <view class='form'>
+        <view class='title' >上门时间</view>
+        <picker class='input_other'
+        mode="date" 
+        value="{{date}}" 
+        start="{{startTime}}" 
+        end="2025-09-01" bindchange="bindPickerChange">
+          <input disabled='false' name="doorTime" type='text' placeholder='请选择预约时间' value='{{doorTime}}'/>
+        </picker>
+        <view class='input_other' style="margin-left:0rpx;">
+          <input  name="remark" value='{{remark}}' type='text' placeholder='备注(选填)'/>
+        </view>
+      </view>
+      
+      <view class='form'>
+        <view class='title'>预约地点</view>
+        <picker class='input_other'  
+        range="{{region}}" bindchange="bindRegionChange" value="{{index}}" custom-item="{{customItem}}">
+          <input disabled='false' name="yuyueAdress" value="{{region[index]}}" type='text' placeholder='曹县'/>
+        </picker>
+      </view>
+
+      <view class='form'>
+        <view class='title'>详细地址</view>
+        <view class='input'>
+          <input name="adressInfo" bindinput='bindadressInfoInput' value="{{adressInfo}}" type='text' placeholder='如世纪城xx苑xx幢xx单元xx号' /></view>
+      </view>
+
+      <view class='form'>
+        <view class='title'>对您称呼</view>
+        <view class='input'>
+          <input name="cellYou" bindinput='bindcellYouInput' value='{{cellYou}}' type='text' placeholder='如刘先生/女士' /></view>
+      </view>
+      <view class='form'>
+        <view class='title'>联系电话</view>
+        <view class='input_other' style="border-right: 1rpx solid #DCDCDC">
+          <input name="phone" bindinput='bindPhoneInput' placeholder='请填写手机号码' />
+        </view>
+        <view class='input_other' style="margin-left:0rpx;">
+          <button class="codebtn" bindtap='getCode'>获取验证码</button>
+        </view>
+      </view>
+      <view class='form'>
+        <view class='title'>验证码</view>
+        <view class='input'>
+          <input name="code" bindinput='bindCodeInput' type='text' value='{{code}}' placeholder='请输入验证码' /></view>
+      </view>
+      <!-- <button style="background-color: #EDE03A;box-shadow:2px 2px 10px #ccc;font-size: 28rpx;color: #fff;border:none" send-message-title="我的订单：\n剪切板已复制内容，粘贴发送订单详情" send-message-img="" show-message-card="true" send-message-path="/pages/order/index.wxml" class='form_last' open-type='contact' bindtap="submit" plain>
+      客服登记预约</button> -->
+      <!-- <button class='form_last' open-type="contact">客服登记预约</button> -->
+      <button class='form_last' form-type="submit" >客服登记预约</button>
+    </view>
+    </form>
+  </view>
+  <!-- 表单 end-->
+
+  <!-- 回收清单 start-->
+  <view class='recyclingList'>
+      <view class='recyclingList_title'>回 收 清 单
+        <image class='recyclingList_title_img' bindtap='bindtapShow' src='/assets/images/index/whao.png' />
+      </view>
+      <view class='recyclingLIst_content'>
+        <!-- 滑动菜单 start
+          autoplay        是否自动切换
+          indicator-dots  是否显示指示点
+          circular        是否采用衔接滑动
+          interval        自动切换时间间隔
+          duration        滑动动画时长
+          vertical        滑动方向是否为纵向
+         -->
+        <swiper class='swiper' indicator-dots="true" circular="true"  duration="1000">
+          <swiper-item>
+            <view class='content'>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/jinshu.png' />
+                <view class='content_text'>金属</view>
+              </view>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/jiaju.png' />
+                <view class='content_text'>废家具</view>
+              </view>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/suliao.png' />
+                <view class='content_text'>塑料</view>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item>
+            <view class='content'>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/feizhi.png' />
+                <view class='content_text'>废纸</view>
+              </view>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/dianqi.png' />
+                <view class='content_text'>废电器</view>
+              </view>
+              <view class='conten_content'>
+                <image class='content_img' src='/imgs/order/fangzhiwu.png' />
+                <view class='content_text'>纺织物</view>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+        <!-- 滑动菜单 end -->
+      </view>
+  </view>
+  <!-- 回收清单 end -->
+
+  <!-- 注意事项  start-->
+  <!-- <view class='huishou_text'>
+    <view class='text_top'>注意事项</view>
+    <view class='text'>• 柠檬项目正在测试期间，仅支持贵阳市观山湖及云岩区大营坡地区。</view>
+    <view class='text'>• 可回收物资为：<span class="span">衣服/鞋子/包包/床单</span>等。</view>
+    <view class='text'>• 物资重量计算后兑换维达抽纸作为回报。2.5KG=1包维达抽纸</view>
+    <view class='text'>• 柠檬回收之衣物进过分拣发送至工厂，拆分纤维回收利用，例如拖把桌布等。</view>
+    <view class='text'>• 预约登记后，工作人员出发前将提前与您联系确认。</view>
+    <view class='text'>• 生活原本没有垃圾，它们都是放错地方的资源，让城市呼吸，柠檬正在行动。</view>
+  </view>  -->
+  <!-- 注意事项  end-->
+</view>

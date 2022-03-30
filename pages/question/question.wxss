@@ -1,0 +1,223 @@
+.hidden{
+  display:none;
+ }
+ 
+.li-wrap {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  justify-content: center;
+  /* width: 90%; */
+  display: flex;
+  float: center;
+  align-items: center;
+  margin-bottom: 24rpx;
+  background: #fff;
+  flex-direction: column;
+  border: none;
+  /* padding-left: 30rpx; */
+}
+
+.li-wrap .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f1f1f1;
+  padding-right: 30rpx;
+}
+
+.li-wrap .list:last-child {
+  border-bottom: none;
+}
+
+.li-wrap .list .list-l {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.li-wrap .list .list-l .icon {
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  /* background: #f1f1f1; */
+}
+
+.li-wrap .list .list-l .icon .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.li-wrap .list .list-l .text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.li-wrap .list .arrow {
+  width: 10rpx;
+  height: 10rpx;
+  border-top: 4rpx solid #ccc;
+  border-right: 4rpx solid #ccc;
+  transform: rotate(45deg);
+}
+
+.movie-container{
+  display: flex;
+  flex-direction: column;
+}
+.navbar{
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  height: 40px;
+  flex-direction: row;
+  text-align: center;
+  color: #A8A8A8;
+  font-size: 15px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-bottom: 1rpx solid #DFDFDF;
+}
+.navbar-item{
+  flex: 1;
+  padding: 26rpx 0px;
+}
+.navbar-item-active{
+  transition: all 0.3s;
+  /* border-bottom: 10rpx solid #494949; */
+  border-bottom-width: 10rpx;
+  border-bottom: 6rpx solid #15B169;
+  /* color: #494949; */
+  color: #15B169;
+}
+
+.movie-content-wrapper{
+  padding-top: 40px;
+}
+/* 弹出框 */
+.arrow{
+  display:inline-block;
+  border:6px solid transparent;
+  border-top-color:#000;
+  margin-left:8px;
+  position:relative;
+  top:6rpx;
+}
+/* ---------------------------- */
+/*模态框*/
+.modal{position:fixed; top:0; right:0; bottom:0; left:0; z-index:1000;}
+.modal-cancel{position:absolute; z-index:2000; top:0; right:0; bottom: 0; left:0; background:rgba(0,0,0,0.3);}
+.bottom-dialog-body{width:100%; position:absolute; z-index:3000; bottom:0; left:0;background:#dfdede;}
+/*动画前初始位置*/
+.bottom-positon{-webkit-transform:translateY(100%);transform:translateY(100%);}
+ 
+ 
+/* 底部弹出框 */
+.bottom-positon{
+  text-align: center;
+}
+.Mselect{
+  margin-bottom: 20rpx;
+}
+.Mselect view{
+  padding: 26rpx 0;
+  background: #fff;
+}
+.Mselect view:not(:last-of-type){
+  border-bottom: 1px solid #dfdede;
+}
+.Mcancel{
+  background: #fff;
+  padding: 26rpx 0;
+}
+/* 弹出框 */
+
+/* 客服 */
+.kefu{
+
+  width: 80%;
+  background-color: white;
+}
+.kefu::after{
+  border: none;
+}
+.recovery{
+  width:100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin:0 auto;
+  /* height:200rpx; */
+  height: auto;
+  
+  background-color: #ffffff;
+  border-top: 1rpx solid #DCDCDC;
+  /* border-radius:20rpx; */
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
+}
+/* pages/test/layout.wxss */
+
+/*横向布局  */
+.layout_horizontal{
+  
+  background-color: #ffffff;
+  margin-top: 15rpx;
+  height: auto;
+  display: flex;
+  width: 100%;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.setting{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  font-size: 30rpx;
+  /* background-color: blue; */
+  max-height: 33rpx;
+}
+.boxfont{
+  color: #CCCCCC;
+  font-size: 25rpx;
+}
+/*纵向布局  */
+.layout_vertical{
+  height: auto;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.box1{
+  align-content: center;
+  align-items: center;
+  flex:1;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.box2{
+  flex:1;
+  text-align: center;
+  text-align: center;
+}
+.boxno1{
+  display: flex;
+  width: 100%;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+/*划线  */
+.line {
+   background-color: blue;
+   height: 2rpx;
+   width: 100%;
+}

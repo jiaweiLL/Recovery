@@ -1,0 +1,25 @@
+<view class='weui-panel__bd'>
+      <view class='weui-media-box weui-media-box_appmsg'>
+        <view class="navView" bindtap="tigger" data-num="1">1：网络</view>
+        <view class="classname {{uhide==1?'':'hidden'}}">
+          2222222
+        </view>
+ 
+        <view class="navView" bindtap="tigger" data-num="2">2：学校</view>
+        <view class="classname {{uhide==2?'':'hidden'}}">
+          333
+        </view>
+ 
+        <view class="navView" bindtap="tigger" data-num="3">3：医院</view>
+        <view class="classname {{uhide==3?'':'hidden'}}">
+          4444
+        </view>
+ 
+        <view class="navView" bindtap="tigger" data-num="4">4：商场</view>
+        <view class="classname {{uhide==4?'':'hidden'}}">
+         55555
+        </view>
+ 
+      </view>
+    </view>
+ 
